@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecza Deposu - Admin Girişi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Başlık -->
+    <header>
+        <h1>Ecza Deposu - Admin Girişi</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="login.html">Müşteri Girişi</a>
+        </nav>
+    </header>
+
+    <!-- Admin Giriş Formu -->
+    <section id="login-form">
+        <h2>Admin Paneli Girişi</h2>
+        <form action="admin_paneli.php" method="post">
+            <div class="input-group">
+                <label for="adminKullaniciAdi">Kullanıcı Adı:</label>
+                <input type="text" id="adminKullaniciAdi" name="adminKullaniciAdi" required placeholder="Kullanıcı adınızı girin">
+            </div>
+
+            <div class="input-group">
+                <label for="adminSifre">Şifre:</label>
+                <input type="password" id="adminSifre" name="adminSifre" required placeholder="Şifrenizi girin">
+            </div>
+
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </section>
+</body>
+</html>

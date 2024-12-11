@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol - Ecza Deposu</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Hayalet penceresi stili */
+        #error-message {
+            display: none; /* Başlangıçta gizli */
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f44336; /* Kırmızı arka plan */
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 16px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: auto;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        /* Animasyonla kayan uyarı */
+        .show-message {
+            animation: slideIn 1ms ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                top: -50px;
+            }
+            to {
+                opacity: 1;
+                top: 20px;
+            }
+        }
+    </style>
+    <script>
+        // Şifre doğrulama fonksiyonu
+        function validatePassword() {
+            var sifre = document.getElementById("sifre").value;
+            var sifreTekrar = document.getElementById("sifre-tekrar").value;
+            var passwordRegex = /^(?=.*[A-Z])(?=.*\d)/; // En az bir büyük harf ve bir rakam içermelidir
+            var errorMessage = document.getElementById("error-message");
+
+            // Şifrelerin eşleşmesini kontrol et
+            if (sifre !== sifreTekrar) {
+                errorMessage.innerText = "Şifreler eşleşmiyor.";
+                errorMessage.style.display = "block"; // Mesajı göster
+                errorMessage.classList.add("show-message"); // Animasyon ekle
+                return false;
+            }
+
+            // Şifrenin geçerli olup olmadığını kontrol et
+            if (!passwordRegex.test(sifre)) {
+                errorMessage.innerText = "Şifre en az bir büyük harf ve bir rakam içermelidir.";
+                errorMessage.style.display = "block"; // Mesajı göster
+                errorMessage.classList.add("show-message"); // Animasyon ekle
+                return false;
+            }
+
+            return true; // Şifreler uygun, form gönderilebilir
+        }
+    </script>
+</head>
+<body>
+    <!-- Başlık ve Navigasyon -->
+    <header>
+        <h1>Kayıt Ol</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="login.html">Giriş Yap</a>
+        </nav>
+    </header>
+
+    <!-- Hayalet Penceresi (Hata Mesajı) -->
+    <div id="error-message"></div>
+
+    <!-- Kayıt Ol Formu -->
+    <section id="kayit-formu">
+        <form action="submit_registration.php" method="POST" onsubmit="return validatePassword()">
+            <label for="ad">Kullanıcı Adı:</label>
+            <input type="text" id="ad" name="ad" required>
+
+            <label for="sifre">Şifre:</label>
+            <input type="password" id="sifre" name="sifre" required>
+
+            <label for="sifre-tekrar">Şifre Tekrarı:</label>
+            <input type="password" id="sifre-tekrar" name="sifre_tekrar" required>
+
+            <button type="submit">Kayıt Ol</button>
+        </form>
+    </section>
+</body>
+</html>

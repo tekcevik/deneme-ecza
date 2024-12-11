@@ -1,0 +1,554 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header nav {
+    margin-top: 10px;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#urun-kartlari {
+    margin: 20px;
+}
+
+.kategori {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.urun-karti {
+    background-color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.urun-karti img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.urun-karti p {
+    margin-top: 10px;
+    font-size: 14px;
+}
+/* Navbar Menü Açma ve Kapatma */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+}
+
+/* Dinamik İçerik ve Arama Sonuçları */
+.search-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Ürün Kartları Hover Efekti */
+.urun-karti {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.urun-karti:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.urun-karti img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.urun-karti p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Menü Açma ve Kapatma */
+.nav-links {
+    display: none;
+}
+
+.nav-links.active {
+    display: block;
+}
+/* CSS Değişkenleri */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --header-bg-color: #34495e;
+    --nav-link-color: white;
+    --button-color: #e74c3c;
+    --form-bg-color: #ffffff;
+    --input-border-color: #ddd;
+    --input-focus-color: #3498db;
+}
+
+/* Genel Sayfa Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header ve Navigasyon */
+header {
+    background-color: var(--header-bg-color);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+nav a {
+    color: var(--nav-link-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Kayıt Ol Formu */
+#kayit-formu {
+    background-color: var(--form-bg-color);
+    padding: 20px;
+    width: 300px;
+    margin: 30px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#kayit-formu label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#kayit-formu input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#kayit-formu input:focus {
+    border-color: var(--input-focus-color);
+    outline: none;
+}
+
+#kayit-formu button {
+    background-color: var(--button-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#kayit-formu button:hover {
+    background-color: darkred;
+}
+
+/* Navbar Toggle - Responsive Tasarım */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
+/* CSS Değişkenleri */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --header-bg-color: #34495e;
+    --nav-link-color: white;
+    --button-color: #e74c3c;
+    --form-bg-color: #ffffff;
+    --input-border-color: #ddd;
+    --input-focus-color: #3498db;
+}
+
+/* Genel Sayfa Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header ve Navigasyon */
+header {
+    background-color: var(--header-bg-color);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+nav a {
+    color: var(--nav-link-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Arama Bölümü */
+#arama {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#arama-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+}
+
+#arama-btn {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#arama-btn:hover {
+    background-color: #2980b9;
+}
+
+/* İlaç Kartları */
+.ilac-karti {
+    background-color: var(--form-bg-color);
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.ilac-karti:hover {
+    transform: scale(1.05);
+}
+
+.ilac-karti h3 {
+    margin: 0;
+    color: #34495e;
+}
+
+.ilac-karti p {
+    color: #7f8c8d;
+}
+
+/* CSS Değişkenleri */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #f4f4f4;
+    --header-bg-color: #34495e;
+    --nav-link-color: white;
+    --button-color: #e74c3c;
+    --form-bg-color: #ffffff;
+    --input-border-color: #ddd;
+    --input-focus-color: #3498db;
+}
+
+/* Genel Sayfa Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header ve Navigasyon */
+header {
+    background-color: var(--header-bg-color);
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: white;
+}
+
+nav a {
+    color: var(--nav-link-color);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Arama Bölümü */
+#arama {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#arama-input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 5px;
+}
+
+#arama-btn {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#arama-btn:hover {
+    background-color: #2980b9;
+}
+
+/* İlaç Kartları */
+.ilac-karti {
+    background-color: var(--form-bg-color);
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.ilac-karti:hover {
+    transform: scale(1.05);
+}
+
+.ilac-karti h3 {
+    margin: 0;
+    color: #34495e;
+}
+
+.ilac-karti p {
+    color: #7f8c8d;
+}
+/* Kategori başlıklarını tıklanabilir hale getirmek */
+.h2 {
+    background-color: #2980b9; /* Arka plan rengi */
+    padding: 10px 20px; /* İçeriği çevreleyen boşluk */
+    border-radius: 15px; /* Köşeleri yuvarlatır */
+    margin: 20px auto; /* Üst ve alt boşluklar */
+    width: fit-content; /* Başlık genişliğini içerik kadar yapar */
+    text-align: center; /* Başlıkları ortalar */
+    display: inline-block; /* Başlıkları blok gibi görünüme getirir */
+    cursor: pointer; /* Tıklanabilir imleç */
+    text-decoration: none; /* Bağlantı altını çizmez */
+    color: #333; /* Başlık yazı rengi */
+    
+}
+
+/* Kategori başlık fontu */
+.h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0; /* Başlık altında ekstra boşluk olmasın */
+}
+
+/* Bağlantı üzerine gelindiğinde stil değişikliği */
+.h2:hover {
+    background-color: #ffffff; /* Arka plan rengi üzerine gelindiğinde değişir */
+    color: #2980b9; /* Yazı rengi üzerine gelindiğinde değişir */
+}
+
+/* Tıklanabilirlik için JavaScript ile link verme */
+.h2 {
+    pointer-events: all;
+}
+
+.h2:active {
+    opacity: 0.7; /* Tıklama anında opaklık */
+}
+/* Müşteri Giriş Formu */
+#login-form {
+    background-color: #fff;
+    padding: 40px;  /* Formun etrafındaki boşlukları artırdık */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;  /* Formun genişliği 500px'e kadar genişleyebilir */
+    margin: 0 auto;
+    text-align: center;
+    min-height: 400px;  /* Formun minimum yüksekliğini artırdık */
+}
+
+/* Başlık */
+#login-form h2 {
+    font-size: 28px;  /* Başlık boyutunu büyüttük */
+    color: #333;
+    margin-bottom: 30px;  /* Başlık ile formun diğer öğeleri arasındaki mesafeyi artırdık */
+}
+
+/* Form Alanları */
+.input-group {
+    margin-bottom: 25px;  /* Alanlar arasındaki mesafeyi artırdık */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;  /* Etiket yazı boyutunu büyüttük */
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;  /* Input alanlarının içindeki boşluğu artırdık */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;  /* Butonun içindeki boşluğu artırdık */
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;  /* Buton yazı boyutunu büyüttük */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+/* Admin Giriş Formu */
+#login-form {
+    background-color: #fff;
+    padding: 40px;  /* Formun etrafındaki boşlukları artırdık */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;  /* Formun genişliği 500px'e kadar genişleyebilir */
+    margin: 0 auto;
+    text-align: center;
+    min-height: 400px;  /* Formun minimum yüksekliğini artırdık */
+}
+
+/* Başlık */
+#login-form h2 {
+    font-size: 28px;  /* Başlık boyutunu büyüttük */
+    color: #333;
+    margin-bottom: 30px;  /* Başlık ile formun diğer öğeleri arasındaki mesafeyi artırdık */
+}
+
+/* Form Alanları */
+.input-group {
+    margin-bottom: 25px;  /* Alanlar arasındaki mesafeyi artırdık */
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;  /* Etiket yazı boyutunu büyüttük */
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;  /* Input alanlarının içindeki boşluğu artırdık */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Submit Butonu */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;  /* Butonun içindeki boşluğu artırdık */
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;  /* Buton yazı boyutunu büyüttük */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}

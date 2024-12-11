@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecza Deposu - Müşteri Girişi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Başlık -->
+    <header>
+        <h1>Ecza Deposu - Müşteri Girişi</h1>
+        <nav>
+            <a href="index.html">Ana Sayfa</a>
+            <a href="admin.html">Admin Girişi</a>
+        </nav>
+    </header>
+
+    <!-- Müşteri Giriş Formu -->
+    <section id="login-form">
+        <div class="login-container">
+            <h2>Müşteri Paneli Girişi</h2>
+            <form action="musteri_paneli.php" method="post">
+                <div class="input-group">
+                    <label for="kullaniciAdi">Kullanıcı Adı:</label>
+                    <input type="text" id="kullaniciAdi" name="kullaniciAdi" required placeholder="Kullanıcı adınızı girin">
+                </div>
+
+                <div class="input-group">
+                    <label for="sifre">Şifre:</label>
+                    <input type="password" id="sifre" name="sifre" required placeholder="Şifrenizi girin">
+                </div>
+
+                <button type="submit" class="submit-btn">Giriş Yap</button>
+            </form>
+        </div>
+    </section>
+
+</body>
+</html>
+
